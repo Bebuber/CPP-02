@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bebuber <bebuber@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/03 13:30:51 by bebuber           #+#    #+#             */
-/*   Updated: 2024/12/03 18:35:49 by bebuber          ###   ########.fr       */
+/*   Created: 2024/12/03 18:35:07 by bebuber           #+#    #+#             */
+/*   Updated: 2024/12/03 22:28:22 by bebuber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,21 @@
 int main( void ) {
 	
 	Fixed a;
-	Fixed b(a);
-	Fixed c;
-
-	a.setRawBits(50);
-	b.setRawBits(85);
-	c.setRawBits(6);
-
-	std::cout << c.getRawBits() << std::endl;
-	c = b;
+	Fixed const b( 3 );
+	Fixed const c( 42.42f );
+	Fixed const d( 1.5f );
 	
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
-
+	a = Fixed( 1234.4321f );
+	
+	std::cout << "a is " << a.getRawBits() << std::endl;
+	std::cout << "b is " << b.getRawBits() << std::endl;
+	std::cout << "c is " << c.getRawBits() << std::endl;
+	std::cout << "d is " << d.getRawBits() << std::endl;
+	
+	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
+	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
+	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
+	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+	
 	return 0;
 }
